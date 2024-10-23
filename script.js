@@ -302,10 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hand tracking setup
     const modelParams = {
         flipHorizontal: true,
-        imageScaleFactor: 0.85,
+        imageScaleFactor: 1,
         maxNumBoxes: 1,
         iouThreshold: 0.7,
-        scoreThreshold: 0.25
+        scoreThreshold: 0.3
     };
 
     let model;
