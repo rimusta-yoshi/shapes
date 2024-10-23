@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     video.style.top = '0';
     video.style.left = '0';
     video.style.width = '300px';
-    video.style.opacity = '0';
+    video.style.opacity = '0.5';
     document.body.appendChild(video);
 
     // Store past hand positions for smoothing
