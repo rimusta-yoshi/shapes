@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMelody = [];
     let currentNoteIndex = 0;
     const recentNotes = [];
-    const MAX_RECENT_NOTES = 5;
+    const MAX_RECENT_NOTES = 30;
 
     // Your existing noteUrls and melodies objects
     const noteUrls = {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const { Engine, Render, Runner, Bodies, Composite } = Matter;
     const engine = Engine.create();
     const world = engine.world;
-    world.gravity.y = 0.5;
+    world.gravity.y = 0.3;
 
     const render = Render.create({
         element: document.body,
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageScaleFactor: 1,
         maxNumBoxes: 1,
         iouThreshold: 0.7,
-        scoreThreshold: 0.3
+        scoreThreshold: 0.35
     };
 
     let model;
