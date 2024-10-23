@@ -9,6 +9,9 @@
             background: #000;
         }
         canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
             background: transparent;
         }
     </style>
@@ -16,6 +19,7 @@
 <body>
     <canvas id="world"></canvas>
     <canvas id="handCanvas"></canvas>
+    
     <!-- Add required scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
