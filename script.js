@@ -16,6 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
     handCanvas.width = window.innerWidth;
     handCanvas.height = window.innerHeight;
 
+    // Create gradient overlay
+    const gradientOverlay = document.createElement('div');
+    gradientOverlay.className = 'gradient-overlay';
+    document.body.appendChild(gradientOverlay);
+
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .gradient-overlay {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(0, 0, 0, 1) 80%
+            );
+            pointer-events: none;
+            z-index: 3;
+        }
+    `;
+    document.head.appendChild(style);
+
     // Initialize the grid
     const grid = [];
     const gridSize = 15;
@@ -74,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMelody = [];
     let currentNoteIndex = 0;
     const recentNotes = [];
-    const MAX_RECENT_NOTES = 30;
+    const MAX_RECENT_NOTES = 2;
 
     // Your existing noteUrls and melodies objects
     const noteUrls = {
@@ -160,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     pair.bodyA.velocity.y - pair.bodyB.velocity.y
                 );
                 
-                if (velocity > 3) {
+                if (velocity > 2) {
                     // Play sound
                     playNextNote();
 
