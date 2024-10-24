@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     video.style.top = '0';
     video.style.left = '0';
     video.style.width = '300px';
-    video.style.opacity = '0.5';
+    video.style.opacity = '0';
     document.body.appendChild(video);
 
     // Store past hand positions for smoothing
@@ -327,10 +327,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hand tracking setup
     const modelParams = {
         flipHorizontal: true,
-        imageScaleFactor: 1,
+        imageScaleFactor: 0.6,
         maxNumBoxes: 1,
-        iouThreshold: 0.7,
-        scoreThreshold: 0.35
+        iouThreshold: 0.5,
+        scoreThreshold: 0.6
     };
 
     let model;
@@ -450,3 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(manageShapes, 100);
     setInterval(applyCursorForce, 16);
 }); // End of DOMContentLoaded
+
+
+//ROLLBACK STEP THIS work
